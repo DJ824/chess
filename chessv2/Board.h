@@ -31,7 +31,7 @@ public:
     //~Board();
     Square &getSquare(int x, int y);
     void setPiece(std::shared_ptr<Piece> piece, int x, int y);
-    void initializePieces(Player whitePlayer, Player blackPlayer);
+    void initializePieces(Player &whitePlayer, Player &blackPlayer);
     Square (&getBoard())[8][8];
     void drawBoard();
     //void drawPieces();

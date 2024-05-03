@@ -1,8 +1,8 @@
-
+#include <iostream>
 #include "Square.h"
 //#include "Piece.h"
 
-Square::Square() : coordinates(std::make_pair(0, 0)), color(Color::WHITE) {} // Example default constructor
+Square::Square() : coordinates(std::make_pair(0, 0)), color(Color::WHITE), piece(nullptr) {} // Example default constructor
 
 Square::Square(std::pair<int, int> pos, Color color)
         : coordinates(std::move(pos)), color(color), piece(nullptr) {}

@@ -7,11 +7,10 @@ class Queen : public Piece {
 public:
     using Piece::Piece;
 
-    inline std::vector<std::pair<int, int>> getValidMoves(const Square board[8][8]) const override {
+    inline void findValidMoves(const Square board[8][8])  override {
         auto pos = getCoordinates();
         int row = pos.first;
         int col = pos.second;
-        std::vector<std::pair<int, int>> validMoves;
 
         auto checkDirection = [&](int dx, int dy) {
             for (int i = 1; i < 8; ++i) {
@@ -39,11 +38,9 @@ public:
         checkDirection(1, -1);
         checkDirection(-1, -1);
 
-        return validMoves;
     }
 
-    inline std::vector<std::pair<int, int>> getCaptureMoves(const Square board[8][8]) const override {
-        std::vector<std::pair<int, int>> captureMoves;
+    void findCaptureMoves(const Square board[8][8])  override {
 
         auto checkDirection = [&](int dx, int dy) {
             auto pos = getCoordinates();
@@ -74,7 +71,6 @@ public:
         checkDirection(1, -1);
         checkDirection(-1, -1);
 
-        return captureMoves;
     }
 };
 

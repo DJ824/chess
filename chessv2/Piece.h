@@ -7,6 +7,7 @@
 #include "Square.h"
 #include "SDL.h"
 #include <string>
+//#include "Board.h"
 
 //class Square;
 
@@ -15,9 +16,11 @@ protected:
     Color color;
     std::pair<int, int> coordinates;
     std::string type;
+    std::vector<std::pair<int, int>> validMoves;
+    std::vector<std::pair<int, int>> captureMoves;
 
 public:
-    Piece(Color color, std::pair<int, int> coordinates);
+    Piece(Color color, std::pair<int, int> coordinates, std::string name);
     virtual ~Piece() = default;
 
     Color getColor() const;
@@ -25,9 +28,11 @@ public:
     std::pair<int, int> getCoordinates() const;
     void setPosition(int newX, int newY);
     static void drawPiece(SDL_Renderer* renderer, SDL_Texture* texture, int x, int y, int tileSize);
+    std::vector<std::pair<int, int>> getValidMoves() const;
+    std::vector<std::pair<int, int>> getCaptureMoves() const;
 
-    virtual std::vector<std::pair<int, int>> getValidMoves(const Square board[8][8]) const = 0;
-    virtual std::vector<std::pair<int, int>> getCaptureMoves(const Square board[8][8]) const = 0;
+    virtual void findValidMoves(const Square board[8][8]) = 0;
+    virtual void findCaptureMoves(const Square board[8][8]) = 0;
 };
 
 #endif

@@ -6,8 +6,8 @@ int main(int argc, char* argv[]) {
 
     Game game;
     game.run();
-    std::cout << "11111" << std:: endl;
+    //std::cout << "11111" << std:: endl;
 
-    //SDL_Quit();
+    SDL_Quit();
 
 }

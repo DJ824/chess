@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/Users/devangjaiswal/Documents/chessv2/build",
+  "command": "/usr/bin/clang++ -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/chessv2.dir/main.cpp.o -c /Users/devangjaiswal/Documents/chessv2/main.cpp",
+  "file": "/Users/devangjaiswal/Documents/chessv2/main.cpp",
+  "output": "CMakeFiles/chessv2.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/devangjaiswal/Documents/chessv2/build",
+  "command": "/usr/bin/clang++ -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/chessv2.dir/Game.cpp.o -c /Users/devangjaiswal/Documents/chessv2/Game.cpp",
+  "file": "/Users/devangjaiswal/Documents/chessv2/Game.cpp",
+  "output": "CMakeFiles/chessv2.dir/Game.cpp.o"
+},
+{
+  "directory": "/Users/devangjaiswal/Documents/chessv2/build",
+  "command": "/usr/bin/clang++ -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/chessv2.dir/Board.cpp.o -c /Users/devangjaiswal/Documents/chessv2/Board.cpp",
+  "file": "/Users/devangjaiswal/Documents/chessv2/Board.cpp",
+  "output": "CMakeFiles/chessv2.dir/Board.cpp.o"
+},
+{
+  "directory": "/Users/devangjaiswal/Documents/chessv2/build",
+  "command": "/usr/bin/clang++ -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/chessv2.dir/Piece.cpp.o -c /Users/devangjaiswal/Documents/chessv2/Piece.cpp",
+  "file": "/Users/devangjaiswal/Documents/chessv2/Piece.cpp",
+  "output": "CMakeFiles/chessv2.dir/Piece.cpp.o"
+},
+{
+  "directory": "/Users/devangjaiswal/Documents/chessv2/build",
+  "command": "/usr/bin/clang++ -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/chessv2.dir/Player.cpp.o -c /Users/devangjaiswal/Documents/chessv2/Player.cpp",
+  "file": "/Users/devangjaiswal/Documents/chessv2/Player.cpp",
+  "output": "CMakeFiles/chessv2.dir/Player.cpp.o"
+},
+{
+  "directory": "/Users/devangjaiswal/Documents/chessv2/build",
+  "command": "/usr/bin/clang++ -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/chessv2.dir/Square.cpp.o -c /Users/devangjaiswal/Documents/chessv2/Square.cpp",
+  "file": "/Users/devangjaiswal/Documents/chessv2/Square.cpp",
+  "output": "CMakeFiles/chessv2.dir/Square.cpp.o"
+}
+]

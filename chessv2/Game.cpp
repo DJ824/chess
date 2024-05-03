@@ -11,8 +11,14 @@ Game::Game()
           board(nullptr),
           selectedSquare(nullptr) {
 
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "SDL could not initialize! SDL_Error: " << SDL_GetError() << std::endl;
+        exit(1);
+    }
+
+    int imgFlags = IMG_INIT_PNG;
+    if ((IMG_Init(imgFlags) & imgFlags) != imgFlags) {
+        std::cerr << "SDL_image could not initialize! SDL_image Error: " << IMG_GetError() << std::endl;
         exit(1);
     }
 
@@ -29,18 +35,19 @@ Game::Game()
     }
 
     board = new Board(renderer);
-    board->initializePieces(whitePlayer, blackPlayer);
     board->loadTextures();
+    board->initializePieces(whitePlayer, blackPlayer);
     board->drawBoard();
-    std::cout << "11111" << std:: endl;
+    //std::cout << "11111" << std::endl;
+    //std::cout << currentPlayer->getColor() << std:: endl;
+    //std:: cout << blackPlayer.hasNoPieces() <<std::endl;
+    //std::cout<<whitePlayer.hasNoPieces()<<std::endl;
+    //blackPlayer.printPieces();
+    //whitePlayer.printPieces();
 }
 
 void Game::switchPlayer() {
-    if (currentPlayer->getColor() == Color::WHITE) {
-        currentPlayer = &blackPlayer;
-    } else {
-        currentPlayer = &whitePlayer;
-    }
+    currentPlayer = (currentPlayer == &whitePlayer) ? &blackPlayer : &whitePlayer;
 }
 
 void Game::update() {
@@ -49,6 +56,7 @@ void Game::update() {
     }
 }
 
+
 void Game::handleEvents() {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
@@ -56,37 +64,52 @@ void Game::handleEvents() {
             case SDL_QUIT:
                 isRunning = false;
                 break;
-            case SDL_MOUSEBUTTONDOWN:
+            case SDL_MOUSEBUTTONDOWN: {
                 int mouseX = 0;
                 int mouseY = 0;
                 SDL_GetMouseState(&mouseX, &mouseY);
                 int rowIndex = mouseY / 100;
                 int colIndex = mouseX / 100;
-                if (selectedSquare->isOccupied()) {
-                    Square &targetSquare = board->getSquare(rowIndex, colIndex);
-                    if (currentPlayer->isValidMove(*selectedSquare, targetSquare, reinterpret_cast<Board &>(board))) {
-                        currentPlayer->makeMove(*selectedSquare, targetSquare, reinterpret_cast<Board &>(board), whitePlayer, blackPlayer);
-                        board->drawBoard();
+
+                if (rowIndex >= 0 && rowIndex < 8 && colIndex >= 0 && colIndex < 8) {
+                    Square& clickedSquare = board->getSquare(rowIndex, colIndex);
+
+                    if (selectedSquare) {
+                        std::cout << "Trying move from (" << selectedSquare->getCoordinates().first << ", "
+                                  << selectedSquare->getCoordinates().second << ") to ("
+                                  << rowIndex << ", " << colIndex << ")" << std::endl;
+
+                        if (currentPlayer->isValidMove(*selectedSquare, clickedSquare, *board)) {
+                            currentPlayer->makeMove(*selectedSquare, clickedSquare, *board, whitePlayer, blackPlayer);
+                            board->drawBoard();
+                            switchPlayer();
+                            selectedSquare = nullptr;
+                        } else {
+                            std::cout << "Invalid move attempted." << std::endl;
+                            selectedSquare = &clickedSquare;
+                        }
+                    } else {
+                        if (clickedSquare.isOccupied() && clickedSquare.getPiece()->getColor() == currentPlayer->getColor()) {
+                            selectedSquare = &clickedSquare;
+                        }
                     }
-                    selectedSquare = nullptr;
                 } else {
-                    selectedSquare = &board->getSquare(rowIndex, colIndex);
-                    if (!selectedSquare->isOccupied() ||
-                        selectedSquare->getPiece()->getColor() != currentPlayer->getColor()) {
-                        selectedSquare = nullptr;
-                    }
+                    std::cerr << "Clicked outside of board bounds." << std::endl;
                 }
                 break;
+            }
         }
     }
 }
 
-void Game::run() {
-    while (isRunning) {
-        handleEvents();
-        update();
+
+
+    void Game::run() {
+        while (isRunning) {
+            handleEvents();
+            update();
+        }
     }
-}
 
 
 

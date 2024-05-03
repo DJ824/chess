@@ -213,26 +213,11 @@ CMAKE_TAPI:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/tapi
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Value Computed by CMake
-MyGame_BINARY_DIR:STATIC=/Users/devangjaiswal/Documents/chessv2/cmake-build-debug
-
-//Value Computed by CMake
-MyGame_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-MyGame_SOURCE_DIR:STATIC=/Users/devangjaiswal/Documents/chessv2
-
-//The directory containing a CMake configuration file for SDL2.
-SDL2_DIR:PATH=/Library/Frameworks/SDL2.framework/Resources/CMake
-
 //Path to a library.
 SDL2_IMAGE_LIBRARY:FILEPATH=/Library/Frameworks/SDL2_image.framework
 
 //Path to a library.
 SDL2_LIBRARY:FILEPATH=/Library/Frameworks/SDL2.framework
-
-//The directory containing a CMake configuration file for SDL2_image.
-SDL2_image_DIR:PATH=/Library/Frameworks/SDL2_image.framework/Resources/CMake
 
 //Value Computed by CMake
 chessv2_BINARY_DIR:STATIC=/Users/devangjaiswal/Documents/chessv2/cmake-build-debug

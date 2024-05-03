@@ -10,8 +10,7 @@ class Knight : public Piece {
 public:
     using Piece::Piece;
 
-    inline std::vector<std::pair<int, int>> getValidMoves(const Square board[8][8]) const override {
-        std::vector<std::pair<int, int>> validMoves;
+    inline void findValidMoves(const Square board[8][8])  override {
         auto pos = getCoordinates();
         int row = pos.first;
         int col = pos.second;
@@ -29,11 +28,9 @@ public:
         for (const auto &move: moves) {
             validMoves.emplace_back(row + move[0], col + move[1]);
         }
-        return validMoves;
     }
 
-    inline std::vector<std::pair<int, int>> getCaptureMoves(const Square board[8][8]) const override {
-        std::vector<std::pair<int, int>> captureMoves;
+    void findCaptureMoves(const Square board[8][8])  override {
         auto pos = getCoordinates();
         int row = pos.first;
         int col = pos.second;
@@ -53,7 +50,6 @@ public:
                 board[row + move[0]][col + move[1]].getPiece()->getColor() != this->color)
                 captureMoves.emplace_back(row + move[0], col + move[1]);
         }
-        return captureMoves;
     }
 
 

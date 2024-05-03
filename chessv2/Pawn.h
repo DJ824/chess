@@ -1,21 +1,20 @@
 #ifndef PAWN_H
 #define PAWN_H
-
+#include <iostream>
 #include "Piece.h"
 
 class Pawn : public Piece {
-private:
-    bool hasMoved;
 
 public:
     using Piece::Piece;
+    bool hasMoved = false;
 
-    inline std::vector<std::pair<int, int>> getValidMoves(const Square board[8][8]) const override {
-        std::vector<std::pair<int, int>> validMoves;
+    inline void findValidMoves(const Square board[8][8]) override {
+        validMoves.clear();
         auto pos = getCoordinates();
         int row = pos.first;
         int col = pos.second;
-        int direction = (color == Color::WHITE) ? 1 : -1;
+        int direction = (color == Color::WHITE) ? -1 : 1;
 
         if (row + direction >= 0 && row + direction < 8) {
             if (!board[row + direction][col].isOccupied()) {
@@ -27,15 +26,15 @@ public:
             }
         }
 
-        return validMoves;
     }
 
-    inline std::vector<std::pair<int, int>> getCaptureMoves(const Square board[8][8]) const override {
-        std::vector<std::pair<int, int>> captureMoves;
+
+    inline void findCaptureMoves(const Square board[8][8])  override {
+        captureMoves.clear();
         auto pos = getCoordinates();
         int row = pos.first;
         int col = pos.second;
-        int direction = (color == Color::WHITE) ? 1 : -1;
+        int direction = (color == Color::WHITE) ? -1 : 1;
 
         int newRow = row + direction;
         for (int newCol : {col - 1, col + 1}) {
@@ -45,8 +44,6 @@ public:
                 }
             }
         }
-
-        return captureMoves;
     }
 
 

@@ -8,11 +8,10 @@ class King : public Piece {
 public:
     using Piece::Piece;
 
-    inline std::vector<std::pair<int, int>> getValidMoves(const Square board[8][8]) const override {
+    inline void findValidMoves(const Square board[8][8])  override {
         auto pos = this->getCoordinates();
         int row = pos.first;
         int col = pos.second;
-        std::vector<std::pair<int, int>> validMoves;
 
         if (!board[row + 1][col].isOccupied()) {
             validMoves.emplace_back(row + 1, col);
@@ -45,11 +44,9 @@ public:
         if (!board[row - 1][col - 1].isOccupied()) {
             validMoves.emplace_back(row - 1, col - 1);
         }
-        return validMoves;
     }
 
-    inline std::vector<std::pair<int, int>> getCaptureMoves(const Square board[8][8]) const override {
-        std::vector<std::pair<int, int>> captureMoves;
+    void findCaptureMoves(const Square board[8][8])  override {
         auto pos = this->getCoordinates();
         int row = pos.first;
         int col = pos.second;
@@ -85,7 +82,6 @@ public:
         if (board[row - 1][col - 1].isOccupied() && board[row - 1][col - 1].getPiece()->getColor() != this->color) {
             captureMoves.emplace_back(row - 1, col - 1);
         }
-        return captureMoves;
     }
 };
 

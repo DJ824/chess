@@ -28,6 +28,7 @@ public:
     static void makeMove(Square& start, Square& end, Board& board, Player& whitePlayer, Player& blackPlayer);
     Color getColor();
     bool hasNoPieces();
+    void printPieces();
 
 };
 
