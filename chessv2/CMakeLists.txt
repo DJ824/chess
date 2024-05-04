@@ -6,15 +6,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(SDL2_PATH "/Library/Frameworks/SDL2.framework")
 set(SDL2_IMAGE_PATH "/Library/Frameworks/SDL2_image.framework")
+set(SDL2_TTF_PATH "Library/Frameworks/SDL2_ttf.framework")
 
 link_directories("/Library/Frameworks")
 
 include_directories("${SDL2_PATH}/Headers")
 include_directories("${SDL2_IMAGE_PATH}/Headers")
+include_directories("${SDL2_TTF_PATH}/Headers")
 
 add_executable(chessv2 main.cpp Game.cpp Board.cpp Piece.cpp Player.cpp Square.cpp)
 
 find_library(SDL2_LIBRARY NAME SDL2 PATHS ${SDL2_PATH})
 find_library(SDL2_IMAGE_LIBRARY NAME SDL2_image PATHS ${SDL2_IMAGE_PATH})
+find_library(SDL2_TTF_LIBRARY NAME SDL2_ttf PATHS ${SDL2_TTF_PATH})
 
-target_link_libraries(chessv2 ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY})
+target_link_libraries(chessv2 ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2_TTF_LIBRARY})

@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_chessv2: phony || CMakeFiles/chessv2.dir
 build CMakeFiles/chessv2.dir/main.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug /Users/devangjaiswal/Documents/chessv2/main.cpp || cmake_object_order_depends_target_chessv2
   DEP_FILE = CMakeFiles/chessv2.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks
+  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -I/Users/devangjaiswal/Documents/chessv2/Library/Frameworks/SDL2_ttf.framework/Headers -F/Library/Frameworks
   OBJECT_DIR = CMakeFiles/chessv2.dir
   OBJECT_FILE_DIR = CMakeFiles/chessv2.dir
   TARGET_COMPILE_PDB = CMakeFiles/chessv2.dir/
@@ -61,7 +61,7 @@ build CMakeFiles/chessv2.dir/main.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug /
 build CMakeFiles/chessv2.dir/Game.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug /Users/devangjaiswal/Documents/chessv2/Game.cpp || cmake_object_order_depends_target_chessv2
   DEP_FILE = CMakeFiles/chessv2.dir/Game.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks
+  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -I/Users/devangjaiswal/Documents/chessv2/Library/Frameworks/SDL2_ttf.framework/Headers -F/Library/Frameworks
   OBJECT_DIR = CMakeFiles/chessv2.dir
   OBJECT_FILE_DIR = CMakeFiles/chessv2.dir
   TARGET_COMPILE_PDB = CMakeFiles/chessv2.dir/
@@ -70,7 +70,7 @@ build CMakeFiles/chessv2.dir/Game.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug /
 build CMakeFiles/chessv2.dir/Board.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug /Users/devangjaiswal/Documents/chessv2/Board.cpp || cmake_object_order_depends_target_chessv2
   DEP_FILE = CMakeFiles/chessv2.dir/Board.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks
+  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -I/Users/devangjaiswal/Documents/chessv2/Library/Frameworks/SDL2_ttf.framework/Headers -F/Library/Frameworks
   OBJECT_DIR = CMakeFiles/chessv2.dir
   OBJECT_FILE_DIR = CMakeFiles/chessv2.dir
   TARGET_COMPILE_PDB = CMakeFiles/chessv2.dir/
@@ -79,7 +79,7 @@ build CMakeFiles/chessv2.dir/Board.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug 
 build CMakeFiles/chessv2.dir/Piece.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug /Users/devangjaiswal/Documents/chessv2/Piece.cpp || cmake_object_order_depends_target_chessv2
   DEP_FILE = CMakeFiles/chessv2.dir/Piece.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks
+  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -I/Users/devangjaiswal/Documents/chessv2/Library/Frameworks/SDL2_ttf.framework/Headers -F/Library/Frameworks
   OBJECT_DIR = CMakeFiles/chessv2.dir
   OBJECT_FILE_DIR = CMakeFiles/chessv2.dir
   TARGET_COMPILE_PDB = CMakeFiles/chessv2.dir/
@@ -88,7 +88,7 @@ build CMakeFiles/chessv2.dir/Piece.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug 
 build CMakeFiles/chessv2.dir/Player.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug /Users/devangjaiswal/Documents/chessv2/Player.cpp || cmake_object_order_depends_target_chessv2
   DEP_FILE = CMakeFiles/chessv2.dir/Player.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks
+  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -I/Users/devangjaiswal/Documents/chessv2/Library/Frameworks/SDL2_ttf.framework/Headers -F/Library/Frameworks
   OBJECT_DIR = CMakeFiles/chessv2.dir
   OBJECT_FILE_DIR = CMakeFiles/chessv2.dir
   TARGET_COMPILE_PDB = CMakeFiles/chessv2.dir/
@@ -97,7 +97,7 @@ build CMakeFiles/chessv2.dir/Player.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug
 build CMakeFiles/chessv2.dir/Square.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug /Users/devangjaiswal/Documents/chessv2/Square.cpp || cmake_object_order_depends_target_chessv2
   DEP_FILE = CMakeFiles/chessv2.dir/Square.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -F/Library/Frameworks
+  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Library/Frameworks/SDL2_image.framework/Headers -I/Users/devangjaiswal/Documents/chessv2/Library/Frameworks/SDL2_ttf.framework/Headers -F/Library/Frameworks
   OBJECT_DIR = CMakeFiles/chessv2.dir
   OBJECT_FILE_DIR = CMakeFiles/chessv2.dir
   TARGET_COMPILE_PDB = CMakeFiles/chessv2.dir/
@@ -113,7 +113,7 @@ build CMakeFiles/chessv2.dir/Square.cpp.o: CXX_COMPILER__chessv2_unscanned_Debug
 
 build chessv2: CXX_EXECUTABLE_LINKER__chessv2_Debug CMakeFiles/chessv2.dir/main.cpp.o CMakeFiles/chessv2.dir/Game.cpp.o CMakeFiles/chessv2.dir/Board.cpp.o CMakeFiles/chessv2.dir/Piece.cpp.o CMakeFiles/chessv2.dir/Player.cpp.o CMakeFiles/chessv2.dir/Square.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
-  LINK_LIBRARIES = -Wl,-rpath,/Library/Frameworks  -Xlinker -framework -Xlinker SDL2  -Xlinker -framework -Xlinker SDL2_image
+  LINK_LIBRARIES = -Wl,-rpath,/Library/Frameworks  -Xlinker -framework -Xlinker SDL2  -Xlinker -framework -Xlinker SDL2_image  -Xlinker -framework -Xlinker SDL2_ttf
   LINK_PATH = -F/Library/Frameworks  -L/Library/Frameworks
   OBJECT_DIR = CMakeFiles/chessv2.dir
   POST_BUILD = :

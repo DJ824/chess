@@ -20,6 +20,7 @@ bool Player::isValidMove(Square& start, Square& end, Board& board) {
     if (!currPiece) return false;
 
     currPiece->findValidMoves(board.getBoard());
+    currPiece->findCaptureMoves(board.getBoard());
     std::pair<int, int> endCoordinates = end.getCoordinates();
 
     std::cout << "Valid moves for " << currPiece->getType() << " at (" << start.getCoordinates().first << ", " << start.getCoordinates().second << "): ";
@@ -28,8 +29,15 @@ bool Player::isValidMove(Square& start, Square& end, Board& board) {
     }
     std::cout << std::endl;
 
+    std::cout << "Capture moves for " << currPiece->getType() << " at (" << start.getCoordinates().first << ", " << start.getCoordinates().second << "): ";
+    for (const auto& move : currPiece->getCaptureMoves()) {
+        std::cout << "(" << move.first << ", " << move.second << ") ";
+    }
+    std::cout << std::endl;
+
 
     bool isValid = false;
+
     for (const auto& move : currPiece->getValidMoves()) {
         if (move.first == endCoordinates.first && move.second == endCoordinates.second) {
             isValid = true;
@@ -67,15 +75,14 @@ void Player::makeMove(Square& start, Square& end, Board& board, Player& whitePla
         if (Pawn* p = dynamic_cast<Pawn*>(currPiece.get())) {
             p->hasMoved = true;
         }
+
         std::pair<int, int> endCoordinates = end.getCoordinates();
         currPiece->setPosition(endCoordinates.first, endCoordinates.second);
 
-        // Log success
         std::cout << "Move executed successfully from (" << start.getCoordinates().first << ", "
                   << start.getCoordinates().second << ") to (" << end.getCoordinates().first << ", "
                   << end.getCoordinates().second << ")" << std::endl;
     } else {
-        // Log failure
         std::cout << "Move execution failed, move is not valid." << std::endl;
     }
 }

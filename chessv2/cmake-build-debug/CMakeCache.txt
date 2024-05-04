@@ -219,6 +219,9 @@ SDL2_IMAGE_LIBRARY:FILEPATH=/Library/Frameworks/SDL2_image.framework
 //Path to a library.
 SDL2_LIBRARY:FILEPATH=/Library/Frameworks/SDL2.framework
 
+//Path to a library.
+SDL2_TTF_LIBRARY:FILEPATH=/Library/Frameworks/SDL2_ttf.framework
+
 //Value Computed by CMake
 chessv2_BINARY_DIR:STATIC=/Users/devangjaiswal/Documents/chessv2/cmake-build-debug
 

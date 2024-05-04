@@ -29,15 +29,19 @@ public:
     }
 
 
-    inline void findCaptureMoves(const Square board[8][8])  override {
+    inline void findCaptureMoves(const Square board[8][8]) override {
         captureMoves.clear();
         auto pos = getCoordinates();
         int row = pos.first;
         int col = pos.second;
         int direction = (color == Color::WHITE) ? -1 : 1;
 
-        int newRow = row + direction;
-        for (int newCol : {col - 1, col + 1}) {
+        int colOffsets[] = {-1, 1};
+
+        for (int offset : colOffsets) {
+            int newRow = row + direction;
+            int newCol = col + offset;
+
             if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
                 if (board[newRow][newCol].isOccupied() && board[newRow][newCol].getPiece()->getColor() != this->color) {
                     captureMoves.emplace_back(newRow, newCol);
