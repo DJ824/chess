@@ -19,3 +19,7 @@ This is a 2 player chess game implemented in C++ using the SDL2 library for grap
 - checkmate detection
 - pawn promotion
 - en passant 
+
+
+## Preview: 
+[preview here](https://youtube.com/shorts/r4LlSm-NQuM?feature=share)
