@@ -9,20 +9,17 @@
 ChessClient::ChessClient(const char* serverIP, int port) : isRunning(true) {
     connectToServer(serverIP, port);
 
-    // Initialize SDL with all required subsystems
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) < 0) {
         std::cerr << "SDL could not initialize! SDL Error: " << SDL_GetError() << std::endl;
         exit(1);
     }
 
-    // Initialize SDL_image
     int imgFlags = IMG_INIT_PNG;
     if (!(IMG_Init(imgFlags) & imgFlags)) {
         std::cerr << "SDL_image could not initialize! SDL_image Error: " << IMG_GetError() << std::endl;
         exit(1);
     }
 
-    // Create window with more specific flags
     window = SDL_CreateWindow("Chess Client", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 800,
                               SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI);
     if (!window) {
@@ -30,19 +27,15 @@ ChessClient::ChessClient(const char* serverIP, int port) : isRunning(true) {
         exit(1);
     }
 
-    // Create renderer
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if (!renderer) {
         std::cerr << "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;
         exit(1);
     }
 
-    // Initialize board
     board = std::make_unique<Board>(renderer);
     board->loadTextures();
     board->initializePiecesForDisplay();
-
-    // Initial render
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
     board->drawBoard();
