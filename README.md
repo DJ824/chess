@@ -10,16 +10,8 @@ This is a 2 player chess game implemented in C++ using the SDL2 library for grap
 - **Turn-Based Gameplay**: Players take turns making moves, with the game enforcing the alternating turns between the two players.
 - **Visual Feedback**: Provides visual feedback for legal moves, highlighting available moves for the selected piece.
 
-## Requirements
-
-- C++ compiler with C++17 support
-- SDL2 library and development files
-
 ## TODO: 
 - checkmate detection
 - pawn promotion
 - en passant 
 
-
-## Preview: 
-[preview here](https://youtube.com/shorts/r4LlSm-NQuM?feature=share)
