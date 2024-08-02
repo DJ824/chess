@@ -1,3 +1,0 @@
-/Users/devangjaiswal/Documents/chessv2/build/CMakeFiles/chessv2.dir
-/Users/devangjaiswal/Documents/chessv2/build/CMakeFiles/edit_cache.dir
-/Users/devangjaiswal/Documents/chessv2/build/CMakeFiles/rebuild_cache.dir
