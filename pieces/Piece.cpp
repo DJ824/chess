@@ -35,11 +35,16 @@ std::vector<std::pair<int, int>> Piece::  getCaptureMoves() const {
 
 
 void Piece::drawPiece(SDL_Renderer* renderer, SDL_Texture* texture, int x, int y, int tileSize) {
-    SDL_Rect dstRect = {x, y, tileSize, tileSize};
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // Red color
-    SDL_RenderFillRect(renderer, &dstRect);
-}
+    if (texture == nullptr) {
+        std::cerr << "Texture is null for piece type: " << std::endl;
+        return;
+    }
 
+    SDL_Rect dstRect = {x, y, tileSize, tileSize};
+    if (SDL_RenderCopy(renderer, texture, NULL, &dstRect) != 0) {
+        std::cerr << "Failed to render texture: " << SDL_GetError() << std::endl;
+    }
+}
 
 
 

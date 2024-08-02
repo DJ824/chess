@@ -135,8 +135,14 @@ void Board::drawBoard() {
             gameBoard[i][j].draw(renderer, j * tileSize, i * tileSize, tileSize);
             auto piece = gameBoard[i][j].getPiece();
             if (piece) {
+                std::cout << "Piece found at (" << i << "," << j << "): " << piece->getType() << std::endl;
                 SDL_Texture* texture = pieceTextures[piece->getType()];
-                piece->drawPiece(renderer, texture, j * tileSize, i * tileSize, tileSize);
+                if (texture) {
+                    std::cout << "Texture found for " << piece->getType() << std::endl;
+                    piece->drawPiece(renderer, texture, j * tileSize, i * tileSize, tileSize);
+                } else {
+                    std::cerr << "Texture not found for piece type: " << piece->getType() << std::endl;
+                }
             }
         }
     }
@@ -174,6 +180,34 @@ void Board::updateFromSerializedState(const std::string& serializedState) {
             }
         }
     }
+}
+
+void Board::initializePiecesForDisplay() {
+    for (int i = 0; i < 8; i++) {
+        gameBoard[1][i].setPiece(std::make_shared<Pawn>(Color::BLACK, std::make_pair(1, i), "BLACK_PAWN"));
+        gameBoard[6][i].setPiece(std::make_shared<Pawn>(Color::WHITE, std::make_pair(6, i), "WHITE_PAWN"));
+    }
+
+    gameBoard[0][0].setPiece(std::make_shared<Rook>(Color::BLACK, std::make_pair(0, 0), "BLACK_ROOK"));
+    gameBoard[0][7].setPiece(std::make_shared<Rook>(Color::BLACK, std::make_pair(0, 7), "BLACK_ROOK"));
+    gameBoard[7][0].setPiece(std::make_shared<Rook>(Color::WHITE, std::make_pair(7, 0), "WHITE_ROOK"));
+    gameBoard[7][7].setPiece(std::make_shared<Rook>(Color::WHITE, std::make_pair(7, 7), "WHITE_ROOK"));
+
+    gameBoard[0][1].setPiece(std::make_shared<Knight>(Color::BLACK, std::make_pair(0, 1), "BLACK_KNIGHT"));
+    gameBoard[0][6].setPiece(std::make_shared<Knight>(Color::BLACK, std::make_pair(0, 6), "BLACK_KNIGHT"));
+    gameBoard[7][1].setPiece(std::make_shared<Knight>(Color::WHITE, std::make_pair(7, 1), "WHITE_KNIGHT"));
+    gameBoard[7][6].setPiece(std::make_shared<Knight>(Color::WHITE, std::make_pair(7, 6), "WHITE_KNIGHT"));
+
+    gameBoard[0][2].setPiece(std::make_shared<Bishop>(Color::BLACK, std::make_pair(0, 2), "BLACK_BISHOP"));
+    gameBoard[0][5].setPiece(std::make_shared<Bishop>(Color::BLACK, std::make_pair(0, 5), "BLACK_BISHOP"));
+    gameBoard[7][2].setPiece(std::make_shared<Bishop>(Color::WHITE, std::make_pair(7, 2), "WHITE_BISHOP"));
+    gameBoard[7][5].setPiece(std::make_shared<Bishop>(Color::WHITE, std::make_pair(7, 5), "WHITE_BISHOP"));
+
+    gameBoard[0][3].setPiece(std::make_shared<Queen>(Color::BLACK, std::make_pair(0, 3), "BLACK_QUEEN"));
+    gameBoard[7][3].setPiece(std::make_shared<Queen>(Color::WHITE, std::make_pair(7, 3), "WHITE_QUEEN"));
+
+    gameBoard[0][4].setPiece(std::make_shared<King>(Color::BLACK, std::make_pair(0, 4), "BLACK_KING"));
+    gameBoard[7][4].setPiece(std::make_shared<King>(Color::WHITE, std::make_pair(7, 4), "WHITE_KING"));
 }
 
 

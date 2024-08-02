@@ -14,6 +14,8 @@ public:
     bool isGameOver() const;
     std::string getWinnerInfo() const;
     Board* getBoard();
+    SDL_Renderer* renderer;
+    SDL_Window* window;
 
 private:
     Board* board;
@@ -24,6 +26,7 @@ private:
     void initializeBoard(SDL_Renderer* renderer);
     void switchPlayer();
     void checkGameEndConditions();
+    void assignPieces();
 };
 
 #endif // GAME_H

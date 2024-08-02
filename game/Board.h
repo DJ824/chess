@@ -39,6 +39,7 @@ public:
     void loadTextures();
     std::string getSerializedState() const;
     void updateFromSerializedState(const std::string &serializedState);
+    void initializePiecesForDisplay();
 };
 
 #endif
